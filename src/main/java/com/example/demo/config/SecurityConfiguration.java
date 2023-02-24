@@ -26,7 +26,7 @@ public class SecurityConfiguration {
 			.disable()
 			.authorizeHttpRequests()
 			// jwtAuthenticationFilter에서 exclude 하더라도 여기에 추가를 해줘야 jwt filter 안 거치고 entry point 호출 가능
-			.requestMatchers("/api/v1/auth/**", "/api/v1/test/**")
+			.antMatchers("/api/v1/auth/**", "/api/v1/test/**")
 			.permitAll()
 			.anyRequest()
 			.authenticated()
