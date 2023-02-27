@@ -11,6 +11,6 @@ public class TestController {
 
 	@GetMapping
 	public ResponseEntity<String> sayHello() {
-		return ResponseEntity.ok("jenkins build third test~");
+		return ResponseEntity.ok("jenkins build 4th test~");
 	}
 }
