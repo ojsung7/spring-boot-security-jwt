@@ -23,7 +23,7 @@ public class ApplicationConfig {
 	
 	@Bean
 	// bean는 무조건 public으로 선언
-	public UserDetailsService userDetailsService() { 
+	public UserDetailsService userDetailsService() {
 		return username -> userRepository.findByEmail(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User not found"));
 	}

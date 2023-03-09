@@ -26,8 +26,8 @@ public class SecurityConfiguration {
 			.disable()
 			.authorizeHttpRequests()
 			// jwtAuthenticationFilter에서 exclude 하더라도 여기에 추가를 해줘야 jwt filter 안 거치고 entry point 호출 가능
-			.antMatchers("/api/v1/auth/**", "/api/v1/test/**")
-			.permitAll()
+			.antMatchers("/api/v1/auth/**", "/api/v1/test/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+			.antMatchers("/api/v1/admin").hasRole("ADMIN")
 			.anyRequest()
 			.authenticated()
 			.and()
